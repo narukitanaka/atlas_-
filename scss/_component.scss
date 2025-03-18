@@ -1,0 +1,120 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+component
+*************************************************/
+// トンマナ
+.bgc-wh {
+  background-color: #fff;
+  color: v.$color-blue;
+  border: 2px solid #fff;
+  &:hover {
+    background-color: v.$color-blue;
+    border: 2px solid #fff;
+    color: #fff;
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
+.bgc-blue {
+  background-color: v.$color-blue;
+  border: 2px solid v.$color-blue;
+  color: #fff;
+  &:hover {
+    background-color: #fff;
+    border: 2px solid v.$color-blue;
+    color: v.$color-blue;
+    svg {
+      path {
+        fill: v.$color-blue;
+      }
+    }
+  }
+}
+.btn-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(240, 247, 253, 1) 0%,
+    rgba(248, 249, 239, 1) 55%,
+    rgba(255, 251, 227, 1) 100%
+  );
+  color: v.$color-blue;
+  border: 2px solid v.$color-blue;
+  &:hover {
+    background: v.$color-blue;
+    color: #fff;
+  }
+}
+
+// ボタン
+.btn-wrap {
+  width: 33rem;
+  @include c.mq() {
+    width: 90%;
+    max-width: 27rem;
+  }
+}
+.btn {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/0.23;
+  border-radius: 5px;
+  @include c.flex(start, center);
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-left: 4rem;
+  transition: all 0.3s;
+  @include c.mq() {
+    font-size: 1.6rem;
+  }
+  &:hover {
+    scale: 0.95;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    @include c.mq() {
+      width: 12px;
+    }
+    path {
+      transition: all 0.3s;
+    }
+  }
+}
+
+// パンクズリスト
+.breadcrumbs {
+  margin-bottom: 4rem;
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      li,
+      a {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      li {
+        &:not(:last-child) {
+          position: relative;
+          &::after {
+            content: "";
+            width: 5px;
+            aspect-ratio: 1/2;
+            background: url(images/icon-arrow_b.svg) no-repeat top/contain;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -2rem;
+          }
+        }
+      }
+    }
+  }
+}

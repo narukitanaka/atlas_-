@@ -1,0 +1,101 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+footer
+*************************************************/
+footer {
+  padding: 7rem 0 1.5rem;
+  background-color: v.$color-blue;
+  @include c.mq() {
+    padding: 5rem 0 1.5rem;
+  }
+  .inner {
+    @include c.flex(between, center);
+    margin-bottom: 3.2rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 5rem;
+    }
+  }
+  p,
+  th,
+  td,
+  li {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+  p {
+    &:has(small) {
+      text-align: center;
+      small {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .logo {
+    width: 37.9rem;
+    margin-bottom: 4rem;
+    @include c.mq() {
+      width: 25rem;
+      margin-bottom: 3rem;
+    }
+  }
+  table {
+    table-layout: fixed;
+    width: 45rem;
+    margin-bottom: 2.6rem;
+    @include c.mq() {
+      width: 100%;
+    }
+    th,
+    td {
+      font-size: 1.4rem;
+      padding: 5px 0;
+      @include c.mq() {
+        font-size: 1.2rem;
+        padding: 3px 0;
+      }
+    }
+    th {
+      width: 20%;
+    }
+  }
+  .btn {
+    svg {
+      path {
+        fill: v.$color-blue;
+      }
+    }
+  }
+  .nav-wrap {
+    @include c.mq() {
+      width: 100%;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+      @include c.mq() {
+        gap: 4rem;
+      }
+      ul {
+        li {
+          @include c.mq() {
+            font-size: 1.4rem;
+          }
+          .little-nav {
+            margin-top: 1.2rem;
+          }
+          a {
+            display: block;
+            margin-bottom: 1.2rem;
+            @include c.mq() {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
