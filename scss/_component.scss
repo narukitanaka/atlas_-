@@ -89,32 +89,111 @@ component
 
 // パンクズリスト
 .breadcrumbs {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   nav {
     ul {
       display: flex;
       align-items: center;
-      gap: 3.5rem;
+      gap: 6.5rem;
       li,
       a {
-        font-size: 1.2rem;
-        font-weight: 500;
+        font-size: 1.6rem;
+        font-weight: 400;
       }
       li {
         &:not(:last-child) {
           position: relative;
           &::after {
-            content: "";
-            width: 5px;
-            aspect-ratio: 1/2;
-            background: url(images/icon-arrow_b.svg) no-repeat top/contain;
+            content: "＞";
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: -2rem;
+            right: -4rem;
           }
         }
       }
+    }
+  }
+}
+
+#cta {
+  position: relative;
+  padding: 6rem 0 7rem;
+  @include c.mq() {
+    padding: 4rem 0;
+  }
+  .inner {
+    width: 90%;
+    max-width: 132rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: url(images/cta_bg.jpg) no-repeat center/110%;
+    @include c.mq(md) {
+      background-size: 150%;
+    }
+    @include c.mq() {
+      text-align: center;
+      background-size: 400%;
+    }
+  }
+  .content {
+    padding: 6.2rem 0 6.5rem 11rem;
+    @include c.mq() {
+      padding: 6rem v.pxtovw_sp(15);
+    }
+  }
+  .ttl-wrap {
+    margin-bottom: 3.6rem;
+    h2 {
+      color: #fff;
+    }
+    .en {
+      @include c.mq() {
+        margin-bottom: 2rem;
+      }
+      &::before {
+        bottom: -1.2rem;
+        @include c.mq() {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  p {
+    color: #fff;
+    margin-bottom: 2.3rem;
+    @include c.mq() {
+      margin-bottom: 4rem;
+    }
+  }
+  .btn-wrap {
+    @include c.mq() {
+      margin: 0 auto;
+    }
+  }
+  &.p-company {
+    &::before {
+      position: absolute;
+      top: v.pxtovw(-150);
+      content: "";
+      width: 100%;
+      aspect-ratio: 1/0.21;
+      background: linear-gradient(
+        90deg,
+        rgba(240, 247, 253, 1) 0%,
+        rgba(248, 249, 239, 1) 55%,
+        rgba(255, 251, 227, 1) 100%
+      );
+      z-index: -1;
+    }
+  }
+  &.p-news {
+    .inner {
+      margin-top: -2rem;
+    }
+    .textSwiper01 {
+      z-index: -1;
     }
   }
 }

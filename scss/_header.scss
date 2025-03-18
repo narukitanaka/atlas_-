@@ -62,6 +62,7 @@ header {
             color: #fff;
             text-shadow: v.$shadow02;
             position: relative;
+            transition: all 0.3s;
             &:hover {
               > div {
                 opacity: 1;
@@ -120,45 +121,46 @@ header {
       }
     }
   }
+  &.p-under,
+  &.header--flow {
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    .logo {
+      img {
+        filter: none !important;
+        &.white {
+          display: none;
+        }
+        &.black {
+          display: block !important;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      gap: 3rem;
+      li {
+        color: v.$text-color !important;
+        text-shadow: none !important;
+        a {
+          color: v.$text-color !important;
+          text-shadow: none !important;
+          &:hover {
+            color: v.$color-blue !important;
+          }
+        }
+      }
+    }
+    .hambager {
+      .c-line {
+        background-color: v.$text-color !important;
+      }
+    }
+  }
 }
 
 .header--unpinned {
   translatey: -100%;
   opacity: 0;
-}
-.header--flow {
-  background-color: rgba($color: #fff, $alpha: 0.5);
-  .logo {
-    img {
-      filter: none !important;
-      &.white {
-        display: none;
-      }
-      &.black {
-        display: block !important;
-      }
-    }
-  }
-  ul {
-    display: flex;
-    gap: 3rem;
-    li {
-      color: v.$text-color !important;
-      text-shadow: none !important;
-      a {
-        color: v.$text-color !important;
-        text-shadow: none !important;
-        &:hover {
-          color: v.$color-blue !important;
-        }
-      }
-    }
-  }
-  .hambager {
-    .c-line {
-      background-color: v.$text-color !important;
-    }
-  }
 }
 
 //ハンバーガーボタン
