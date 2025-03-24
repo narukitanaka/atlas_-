@@ -124,6 +124,7 @@ header {
   &.p-under,
   &.header--flow {
     background-color: rgba($color: #fff, $alpha: 0.5);
+    box-shadow: v.$shadow06;
     .logo {
       img {
         filter: none !important;

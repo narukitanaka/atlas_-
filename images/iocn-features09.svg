@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.739" height="49.948" viewBox="0 0 67.739 49.948">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.304" x2="1" y2="0.325" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f0f7fd"/>
+      <stop offset="1" stop-color="#fffbe3"/>
+    </linearGradient>
+  </defs>
+  <g id="iocn-features09" transform="translate(-1309.442 788.038)">
+    <g id="グループ_50" data-name="グループ 50" transform="translate(8134.181 885.21)">
+      <path id="パス_83" data-name="パス 83" d="M-6824-1665.176s3.474-6.072,12.146-6.072,11.909,6.072,11.909,6.072" transform="translate(6.444 6.563)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <path id="パス_84" data-name="パス 84" d="M-6824-1662.24s5.154-9.009,18.02-9.009,17.669,9.009,17.669,9.009" transform="translate(0.626 -1)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <path id="パス_85" data-name="パス 85" d="M-6824-1667.9a7.7,7.7,0,0,1,6.692-3.346,7.862,7.862,0,0,1,5.848,2.4" transform="translate(11.844 13.828)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <circle id="楕円形_25" data-name="楕円形 25" cx="1.79" cy="1.79" r="1.79" transform="translate(-6807.32 -1650.469)" fill="#fff" stroke="#393939" stroke-width="2"/>
+    </g>
+    <g id="グループ_51" data-name="グループ 51" transform="translate(8111.181 897.642)">
+      <path id="パス_87" data-name="パス 87" d="M-6778-1664v20.342s3.5,6.927,22.459,6.927,20.541-6.927,20.541-6.927V-1664" stroke="#393939" stroke-width="2" fill="url(#linear-gradient)"/>
+      <path id="パス_88" data-name="パス 88" d="M-6778-1643.658s3.576,6.628,22.532,6.628,20.468-6.628,20.468-6.628" transform="translate(0 -11)" fill="none" stroke="#393939" stroke-width="2"/>
+      <path id="パス_89" data-name="パス 89" d="M-6763.245-1636.731v-5.53h15.807v5.112" transform="translate(-1.159)" fill="none" stroke="#393939" stroke-width="2"/>
+      <ellipse id="楕円形_26" data-name="楕円形 26" cx="21.5" cy="8" rx="21.5" ry="8" transform="translate(-6778 -1672)" stroke="#393939" stroke-linecap="round" stroke-width="2" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

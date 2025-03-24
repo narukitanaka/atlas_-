@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="75" viewBox="0 0 75 75">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_233" data-name="長方形 233" width="75" height="75" transform="translate(-3392 10004)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f0f7fd"/>
+      <stop offset="1" stop-color="#fffbe3"/>
+    </linearGradient>
+  </defs>
+  <g id="iocn-features01" transform="translate(3392 -10004)" clip-path="url(#clip-path)">
+    <g id="グループ_56" data-name="グループ 56" transform="translate(-86.291 10908.06)">
+      <path id="パス_32" data-name="パス 32" d="M-6200.709-1675.868h72v12.177h-72Z" transform="translate(2897 823.64)" stroke="#393939" stroke-linecap="round" stroke-width="2" fill="url(#linear-gradient)"/>
+      <line id="線_71" data-name="線 71" y2="19.321" transform="translate(-3267.709 -894.06)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <line id="線_72" data-name="線 72" x1="13.954" y2="13.954" transform="translate(-3256.535 -884.936)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <line id="線_73" data-name="線 73" x1="18.248" transform="translate(-3249.957 -862.174)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <line id="線_74" data-name="線 74" x2="13.954" y2="13.954" transform="translate(-3292.838 -884.936)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <line id="線_75" data-name="線 75" x2="18.248" transform="translate(-3303.709 -862.174)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+      <path id="パス_33" data-name="パス 33" d="M-6200.709-1675.868h53.752v12.177h-53.752Z" transform="translate(2906.124 823.64)" fill="none" stroke="#393939" stroke-linecap="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -34,13 +34,8 @@ component
     }
   }
 }
-.btn-gradient {
-  background: linear-gradient(
-    90deg,
-    rgba(240, 247, 253, 1) 0%,
-    rgba(248, 249, 239, 1) 55%,
-    rgba(255, 251, 227, 1) 100%
-  );
+.btn-wh {
+  background-color: #fff;
   color: v.$color-blue;
   border: 2px solid v.$color-blue;
   &:hover {

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="75" viewBox="0 0 75 75">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_234" data-name="長方形 234" width="75" height="75" transform="translate(-2792 10260)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-0.051" y1="0.639" x2="1.062" y2="0.634" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f0f7fd"/>
+      <stop offset="1" stop-color="#fffbe3"/>
+    </linearGradient>
+  </defs>
+  <g id="iocn-features06" transform="translate(2792 -10260)" clip-path="url(#clip-path)">
+    <g id="グループ_61" data-name="グループ 61" transform="translate(8 10915)">
+      <ellipse id="楕円形_20" data-name="楕円形 20" cx="32.5" cy="32" rx="32.5" ry="32" transform="translate(-2795 -649)" fill="none" stroke="#393939" stroke-width="2"/>
+      <path id="パス_57" data-name="パス 57" d="M-6068.83-1451l45.7,45.7" transform="translate(3283.854 811.152)" fill="none" stroke="#393939" stroke-width="2"/>
+      <path id="パス_58" data-name="パス 58" d="M-5529.559-1456.045l-23.709,29.9h13.846l-4.62,20.676,23.96-30.169h-14.082Z" transform="translate(2773 813)" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
