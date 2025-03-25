@@ -37,7 +37,7 @@ header {
     .nav_wrap {
       @include c.flex(center, center);
       gap: 3rem;
-      @include c.mq() {
+      @include c.mq(md) {
         display: none;
       }
       ul {
@@ -109,7 +109,7 @@ header {
       }
       .btn-area {
         width: 18.8rem;
-        @include c.mq() {
+        @include c.mq(md) {
           display: none;
         }
         .btn {
@@ -168,7 +168,7 @@ header {
 .hamberger-wrap {
   @include c.flex(center, center);
   display: none;
-  @include c.mq() {
+  @include c.mq(md) {
     display: block;
   }
   .ham-inner {
@@ -339,6 +339,38 @@ header {
     nav {
       ul {
         li {
+          &.parent {
+            position: relative;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid v.$color-blue;
+            &::before {
+              content: "";
+              width: 2.5rem;
+              aspect-ratio: 1/1;
+              background: url(images/icon-arrow_acc.svg) no-repeat
+                center/contain;
+              position: absolute;
+              top: 1.5rem;
+              right: 2rem;
+              transition: all 0.3s;
+            }
+            .child {
+              a {
+                padding: 0.7rem 0;
+                border-bottom: none;
+                &:first-of-type {
+                  margin-top: 1rem;
+                }
+              }
+            }
+            &.open {
+              &::before {
+                rotate: 180deg;
+              }
+            }
+          }
           a {
             display: block;
             width: 100%;

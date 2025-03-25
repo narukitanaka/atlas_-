@@ -6,37 +6,67 @@
 // 下層共通
 .under_head {
   margin-top: 9.8rem;
+  @include c.mq() {
+    margin-top: 6.6rem;
+  }
   .inner {
     max-width: 100rem;
   }
   .under_head_ttl {
     h1 {
       font-weight: 200;
+      @include c.mq() {
+        font-weight: 300;
+      }
     }
   }
   &.head-left {
     .inner {
-      padding: 15rem 0 6.5rem;
+      padding: clamp(10rem, v.pxtovw(150), 15rem) 0 6.5rem;
+      @include c.mq() {
+        padding: 6rem 0 4rem;
+      }
     }
     .under_head_ttl {
       .en {
         margin-bottom: 2rem;
+        @include c.mq() {
+          margin-bottom: 1.5rem;
+        }
         &::before {
-          width: 8.5rem;
+          width: clamp(4rem, v.pxtovw(85), 8.5rem);
           top: 8px;
-          left: -10rem;
+          left: clamp(-10rem, v.pxtovw(-100), -8rem);
+          @include c.mq() {
+            width: 6rem;
+            top: 2.5rem;
+            left: 0;
+          }
         }
       }
     }
     h1 {
-      font-size: 6.8rem;
+      font-size: clamp(5.4rem, v.pxtovw(68), 6.8rem);
+      @include c.mq() {
+        font-size: 3.2rem;
+      }
       span {
         font-size: 2.2rem;
         font-weight: 400;
+        @include c.mq() {
+          display: inline-block;
+          font-size: 1.4rem;
+          letter-spacing: 0;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+        }
       }
       &:has(span) {
         line-height: 1.3;
         margin-top: -4rem;
+        @include c.mq() {
+          margin-top: 0;
+        }
       }
     }
   }
@@ -49,12 +79,18 @@
     );
     .inner {
       padding: 10rem 0;
+      @include c.mq() {
+        padding: 6rem;
+      }
     }
     .under_head_ttl {
       text-align: center;
       .en {
         display: inline-block;
         margin-bottom: 3rem;
+        @include c.mq() {
+          margin-bottom: 2rem;
+        }
         &::before {
           width: 100%;
           top: 2.5rem;
@@ -64,7 +100,20 @@
       }
       h1 {
         font-size: 4.2rem;
+        @include c.mq() {
+          font-size: 3.2rem;
+        }
       }
+    }
+  }
+  .img-box {
+    @include c.mq() {
+      aspect-ratio: 1/0.45;
+    }
+    img {
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
     }
   }
 }
@@ -73,6 +122,9 @@
 .p-test {
   .inner {
     max-width: 100rem;
+    @include c.mq() {
+      max-width: 60rem;
+    }
   }
 }
 
@@ -80,8 +132,14 @@
 .p-product {
   &.about-product {
     padding: 14.2rem 0 10rem;
+    @include c.mq() {
+      padding: 6rem 0 8rem;
+    }
     .ttl-wrap {
       .en {
+        @include c.mq() {
+          margin-bottom: 2rem;
+        }
         &::before {
           width: 10rem;
           top: auto;
@@ -95,10 +153,20 @@
     .flex {
       @include c.flex(start, center);
       gap: 7rem;
+      @include c.mq() {
+        flex-direction: column;
+        gap: 0;
+      }
       .left {
         padding-left: 2rem;
+        @include c.mq() {
+          padding-left: 0;
+        }
         .img-box {
           width: 30rem;
+          @include c.mq() {
+            width: 20rem;
+          }
         }
       }
       .right {
@@ -113,14 +181,23 @@
     .textSwiper01 {
       margin-top: -9rem;
       z-index: -1;
+      @include c.mq() {
+        margin-top: -5rem;
+      }
     }
     &.prod02 {
       .flex {
         margin-top: 2rem;
         .left {
           padding-left: 7rem;
+          @include c.mq() {
+            padding-left: 0;
+          }
           .img-box {
             width: 25.3rem;
+            @include c.mq() {
+              width: 20rem;
+            }
           }
         }
       }
@@ -132,15 +209,28 @@
       .flex {
         align-items: flex-start;
         gap: 11rem;
+        @include c.mq() {
+          align-items: center;
+          gap: 4rem;
+        }
         .left {
           padding-left: 10rem;
+          @include c.mq() {
+            padding-left: 0;
+          }
           .img-box {
             width: 13.7rem;
+            @include c.mq() {
+              width: 8rem;
+            }
           }
         }
         .right {
           .ttl-wrap {
             margin-bottom: 8.7rem;
+            @include c.mq() {
+              margin-bottom: 3.5rem;
+            }
           }
         }
       }
@@ -154,17 +244,28 @@
   &.specific,
   &.other-products {
     .ttl-wrap {
-      margin-left: 2.5rem;
+      margin-left: 2.5rem !important;
       margin-bottom: 4rem;
+      @include c.mq() {
+        margin-left: 2rem !important;
+        margin-bottom: 2.5rem;
+      }
       .en {
         margin-bottom: 1.5rem;
+        @include c.mq() {
+          margin-bottom: 1rem !important;
+        }
         &::before {
           content: "";
           width: 1px;
           height: 8rem;
           position: absolute;
           top: 3px;
-          left: -2.5rem;
+          left: -2.5rem !important;
+          @include c.mq() {
+            left: -2rem !important;
+            height: 6rem !important;
+          }
         }
       }
     }
@@ -172,6 +273,9 @@
   &.fetures {
     background: v.$gradient01;
     padding: 13.8rem 0 19.1rem;
+    @include c.mq() {
+      padding: 8rem 0 10rem;
+    }
     .ttl-wrap {
       margin-left: 3.5rem;
       margin-bottom: 3.5rem;
@@ -192,33 +296,65 @@
       grid-template-columns: repeat(3, 1fr); /* 3列 */
       grid-template-rows: repeat(2, auto); /* 2行 */
       gap: 17px;
+      @include c.mq() {
+        max-width: 28rem;
+        margin: 0 auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+      }
       .box {
         padding: 6.3rem 0 5.6rem;
         background-color: #fff;
         border-radius: 5px;
-        $shadow09: 0px 0px 5px rgba(#000000, 0.05);
+        box-shadow: v.$shadow09;
+        @include c.mq() {
+          padding: 3rem 0;
+        }
         h3 {
           font-size: 2.2rem;
           font-weight: 700;
           text-align: center;
           margin-bottom: 2rem;
+          @include c.mq() {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
         }
         .img-box {
           width: 7.5rem;
           margin: 0 auto 2.5rem;
+          @include c.mq() {
+            width: 6rem;
+            margin: 0 auto 1.5rem;
+          }
         }
         p {
           line-height: 1.7;
           text-align: center;
         }
+        &.row2 {
+          h3 {
+            min-height: 7.5rem;
+            @include c.mq() {
+              min-height: auto;
+            }
+          }
+        }
       }
     }
     &.prod02 {
       padding-bottom: 30rem;
+      @include c.mq() {
+        padding-bottom: 10rem;
+      }
     }
   }
   &.types {
     margin-top: -11rem;
+    @include c.mq() {
+      margin-top: 0;
+    }
     .types-wrapper {
       max-width: 120rem;
       margin: 0 auto;
@@ -226,44 +362,100 @@
       background-color: #fff;
       box-shadow: 0px 0px 99px rgba(#ddefff, 1);
     }
+    .txr-scroll {
+      color: v.$color-blue;
+      text-align: end;
+      margin-bottom: 1rem;
+    }
     .img-box {
+      @include c.mq() {
+        width: 80rem;
+        padding: 1rem 0;
+      }
       img {
+        padding: 1rem 0;
         filter: drop-shadow(v.$shadow05);
+      }
+    }
+    .table-scroll {
+      @include c.mq() {
+        overflow: scroll;
       }
     }
     &.prod03 {
       .img-box {
         margin-top: -6rem;
+        @include c.mq() {
+          margin-top: 0;
+          width: 50rem;
+        }
       }
     }
   }
   &.specific {
     padding: 17.5rem 0 21rem;
+    @include c.mq() {
+      padding: 8rem 0 10rem;
+      overflow: hidden;
+    }
+    .txr-scroll {
+      color: v.$color-blue;
+      text-align: end;
+      margin-bottom: 1rem;
+    }
     .img-box {
       box-shadow: v.$shadow05;
+      @include c.mq() {
+        width: 80rem;
+      }
+    }
+    .table-scroll {
+      box-shadow: v.$shadow05;
+      @include c.mq() {
+        overflow: scroll;
+      }
     }
   }
   &.other-products {
     position: relative;
     padding-top: 11rem;
+    @include c.mq() {
+      padding-top: 6rem;
+      margin-bottom: 4rem;
+    }
     &::before {
       position: absolute;
       top: 0;
       left: 0;
       content: "";
       width: v.pxtovw(1144);
+      max-width: 123rem;
       aspect-ratio: 1/0.47;
       background-color: #f0f7fd;
       z-index: -1;
+      @include c.mq() {
+        width: v.pxtovw_sp(320);
+        aspect-ratio: 1/2.1;
+      }
     }
     .inner {
       @include c.flex(between, start);
-    }
-    .content {
-      width: 70rem;
-      display: flex;
       @include c.mq() {
         flex-direction: column;
+      }
+    }
+    .right {
+      @include c.mq() {
+        width: 100%;
+      }
+    }
+    .content {
+      width: clamp(58rem, v.pxtovw(700), 70rem);
+      display: flex;
+      @include c.mq() {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 4rem;
       }
       .product {
         width: calc(100% / 2);
@@ -319,6 +511,9 @@
     .textSwiper02 {
       margin-top: -2rem;
       z-index: -1;
+      @include c.mq() {
+        margin-top: 0;
+      }
     }
   }
 }
@@ -334,13 +529,22 @@
     content: "";
     background-color: #f0f7fd;
     z-index: -1;
+    @include c.mq() {
+      width: 100%;
+    }
   }
   &.quality-safety {
     padding: 10rem 0 4rem;
+    @include c.mq() {
+      padding: 6rem 0 4rem;
+    }
     .ttl-wrap {
       text-align: center;
       margin-bottom: 3.5rem;
       .en {
+        @include c.mq() {
+          margin-bottom: 2rem;
+        }
         &::before {
           width: 17.8rem;
           top: auto;
@@ -354,10 +558,19 @@
       width: 60rem;
       line-height: 2;
       margin: 0 auto 6rem;
+      @include c.mq() {
+        width: 100%;
+      }
     }
     .flex {
       @include c.flex(center, center);
       gap: 4.6rem;
+      @include c.mq() {
+        width: 90%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
       .box {
         width: 15rem;
         aspect-ratio: 1/1;
@@ -370,6 +583,9 @@
         );
         color: v.$color-blue;
         @include c.flex(center, center);
+        @include c.mq() {
+          width: calc((100% / 2) - (2rem / 2));
+        }
       }
     }
     .textSwiper01 {
@@ -389,36 +605,66 @@
   }
   &.main-test {
     padding-top: 18rem;
+    @include c.mq() {
+      padding-top: 10rem;
+    }
     &::before {
+      max-width: 155rem;
       aspect-ratio: 1/0.72;
+      min-height: 90rem;
+      @include c.mq() {
+        aspect-ratio: 1/3.5;
+      }
     }
     .ttl-wrap {
       margin-bottom: 5.5rem;
+      @include c.mq() {
+        margin-bottom: 3.5rem;
+      }
     }
     .inner {
       > .flex {
         @include c.flex(between, end);
         gap: 2.5rem;
         margin-bottom: 15rem;
+        @include c.mq() {
+          flex-direction: column;
+          margin-bottom: 8rem;
+        }
         .left {
           width: 38rem;
+          @include c.mq() {
+            width: 100%;
+          }
           .img-box {
             width: 100%;
           }
         }
         .right {
           width: 59.6rem;
+          @include c.mq() {
+            width: 100%;
+          }
           .txt {
             line-height: 2;
             padding-left: 3rem;
             margin-bottom: 4.2rem;
             @include c.mq() {
               line-height: 1.7;
+              padding-left: 0;
             }
           }
           .flex {
             @include c.flex(between, center);
             gap: 1.2rem;
+            @include c.mq() {
+              flex-wrap: wrap;
+            }
+            .box {
+              @include c.mq() {
+                width: calc((100% / 2) - (1.2rem / 2));
+              }
+            }
           }
         }
       }
@@ -438,9 +684,17 @@
         border-radius: 5px;
         margin-bottom: 3rem;
         box-shadow: 0px 0px 99px rgba(#ddefff, 1);
+        @include c.mq() {
+          padding: 4rem 2rem;
+          box-shadow: 0px 0px 20px rgba(#ddefff, 1);
+        }
         .ttl {
           position: relative;
           margin-bottom: 4.5rem;
+          @include c.mq() {
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+          }
           &::before {
             position: absolute;
             top: 0;
@@ -449,17 +703,27 @@
             width: 1px;
             height: 100%;
             background-color: #ffe235;
+            @include c.mq() {
+              left: 0;
+            }
           }
           h3 {
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            @include c.mq() {
+              font-size: 1.8rem;
+            }
           }
         }
         .flex {
           @include c.flex(between, center);
           gap: 4rem;
           margin-bottom: 4rem;
+          @include c.mq() {
+            gap: 1rem;
+            margin-bottom: 2rem;
+          }
         }
         .result {
           @include c.flex(center, center);
@@ -478,12 +742,15 @@
         .txt {
           line-height: 2.4;
           @include c.mq() {
-            line-height: 0.7;
+            line-height: 1.7;
           }
         }
       }
       .info {
         margin-top: 11rem;
+        @include c.mq() {
+          margin-top: 10rem;
+        }
         h4 {
           @include c.flex(center, center);
           width: 16rem;
@@ -495,19 +762,36 @@
         > div {
           @include c.flex(between, center);
           margin-bottom: 22.8rem;
+          @include c.mq() {
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 10rem;
+          }
           .left {
             flex-basis: 54%;
+            @include c.mq() {
+              flex-basis: 100%;
+            }
             table {
               th {
                 width: 20%;
+                @include c.mq() {
+                  width: 30%;
+                }
               }
             }
           }
           .right {
             flex-basis: 41%;
+            @include c.mq() {
+              flex-basis: 100%;
+            }
             table {
               th {
                 width: 48%;
+                @include c.mq() {
+                  width: 30%;
+                }
               }
             }
           }
@@ -519,6 +803,14 @@
               padding: 1.2rem 0;
               color: v.$color-blue;
               border-bottom: 1px solid v.$color-blue;
+              @include c.mq() {
+                font-size: 14px;
+              }
+            }
+            td {
+              @include c.mq() {
+                padding-left: 2rem;
+              }
             }
             tr {
               &:last-of-type {
@@ -536,17 +828,31 @@
   &.other-test {
     position: relative;
     padding-top: 14rem;
+    padding-top: clamp(6rem, v.pxtovw(140), 14rem);
     &::before {
-      aspect-ratio: 1/0.66;
+      aspect-ratio: 1/0.65;
+      min-height: 84rem;
+      max-height: 87.5rem;
+      @include c.mq() {
+        aspect-ratio: 1/2.56;
+        max-height: none;
+      }
     }
     .ttl-wrap {
       margin-bottom: 5.5rem;
+      @include c.mq() {
+        margin-bottom: 4rem;
+      }
+      .en {
+        margin-bottom: 1.5rem;
+      }
     }
     p {
       line-height: 2.2;
       margin-bottom: 7.5rem;
       @include c.mq() {
         line-height: 1.7;
+        margin-bottom: 4rem;
       }
     }
     table {
@@ -555,20 +861,34 @@
       border-collapse: separate;
       border-spacing: 0 10px;
       margin: 0 auto 12rem;
+      @include c.mq() {
+        width: 100%;
+        margin-bottom: 8rem;
+      }
       th,
       td {
         padding: 1rem;
+        @include c.mq() {
+          display: block;
+          font: 14px;
+        }
       }
       th {
         width: 27%;
         color: #fff;
         text-align: center;
         background-color: v.$color-blue;
+        @include c.mq() {
+          width: 100%;
+        }
       }
       td {
         color: v.$color-blue;
         background-color: #fff;
         padding-left: 5rem;
+        @include c.mq() {
+          padding-left: 1.5rem;
+        }
       }
     }
   }
@@ -582,17 +902,28 @@
   }
 }
 .p-company {
-  margin-top: 22.5rem;
-  margin-bottom: 35rem;
+  margin-top: clamp(15rem, v.pxtovw(225), 22.5rem);
+  margin-bottom: clamp(20rem, v.pxtovw(350), 35rem);
+  @include c.mq() {
+    margin-top: 8rem;
+    margin-bottom: 12rem;
+  }
   .inner {
     max-width: 100rem;
     @include c.flex(between, start);
+    @include c.mq() {
+      flex-direction: column;
+      gap: 5rem;
+    }
   }
   .left {
     padding-left: 3.5rem;
     .ttl-wrap {
       .en {
         margin-bottom: 2rem;
+        @include c.mq() {
+          margin-bottom: 1rem;
+        }
         &::before {
           content: "";
           width: 1px;
@@ -600,12 +931,19 @@
           position: absolute;
           top: 3px;
           left: -3.5rem;
+          @include c.mq() {
+            height: 6rem;
+          }
         }
       }
     }
   }
   .right {
+    width: 72%;
     max-width: 72rem;
+    @include c.mq() {
+      width: 100%;
+    }
     table {
       table-layout: fixed;
       width: 100%;
@@ -623,6 +961,10 @@
       th,
       td {
         padding: 2rem 0;
+        @include c.mq() {
+          font-size: 14px;
+          padding: 1rem 0;
+        }
       }
       th {
         width: 28%;
@@ -630,6 +972,9 @@
       }
       td {
         padding-left: 4rem;
+        @include c.mq() {
+          padding-left: 2rem;
+        }
       }
     }
   }
@@ -638,8 +983,14 @@
 // お知らせ
 .p-news {
   margin-top: 4.8rem;
+  @include c.mq() {
+    margin-top: 3rem;
+  }
   &.p-archive {
     margin-bottom: 26rem;
+    @include c.mq() {
+      margin-bottom: 10rem;
+    }
   }
   &.p-single {
     margin-bottom: 10rem;
@@ -655,6 +1006,12 @@
     display: flex;
     gap: 6rem;
     margin-bottom: 10rem;
+    @include c.mq() {
+      flex-wrap: wrap;
+      row-gap: 3rem;
+      padding-inline: 4rem 2rem;
+      margin-bottom: 6rem;
+    }
     a {
       position: relative;
       display: inline-block;
@@ -679,17 +1036,47 @@
       display: flex;
       align-items: center;
       padding: 1.9rem;
+      background-color: #fff;
+      transition: all 0.3s;
+      @include c.mq() {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      &:hover {
+        background-color: v.$color-blue;
+        dt,
+        dd {
+          color: #fff;
+        }
+      }
     }
     dt {
       width: 30%;
       @include c.flex(center, center);
       gap: 4rem;
+      transition: all 0.3s;
+      @include c.mq() {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 2rem;
+      }
+      span {
+        @include c.mq() {
+          font-size: 1.3rem;
+        }
+      }
       .cate {
         min-width: 11rem;
         border: 1px solid v.$color-blue;
         color: v.$color-blue;
         padding: 0.5rem 0.5rem;
         text-align: center;
+        background-color: #fff;
+        transition: all 0.3s;
+        @include c.mq() {
+          min-width: 8rem;
+          padding: 0 0.5rem;
+        }
       }
     }
     dd {
@@ -698,22 +1085,40 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      transition: all 0.3s;
+      @include c.mq() {
+        width: 100%;
+        padding-left: 0;
+        font-size: 1.4rem;
+      }
     }
   }
   .contets {
     margin-top: 13rem;
     margin-bottom: 20rem;
+    @include c.mq() {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+    }
     .tag {
       display: flex;
       @include c.flex(start, center);
       gap: 2rem;
       margin-bottom: 2.5rem;
+      span {
+        @include c.mq() {
+          font-size: 1.3rem;
+        }
+      }
       .cate {
         min-width: 11rem;
         border: 1px solid v.$color-blue;
         color: v.$color-blue;
         padding: 0.5rem 0.5rem;
         text-align: center;
+        @include c.mq() {
+          min-width: 8rem;
+        }
       }
     }
     h1 {
@@ -722,6 +1127,11 @@
       font-weight: 700;
       padding-bottom: 2.5rem;
       margin-bottom: 7rem;
+      @include c.mq() {
+        font-size: 2.4rem;
+        line-height: 1.5;
+        margin-bottom: 4rem;
+      }
       &::before {
         position: absolute;
         bottom: 0;
@@ -748,15 +1158,24 @@
         rgba(255, 251, 227, 1) 100%
       );
       padding: 2rem;
+      @include c.mq() {
+        font-size: 2rem;
+      }
     }
     h3 {
       font-size: 2.4rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid;
+      @include c.mq() {
+        font-size: 1.8rem;
+      }
     }
     h4 {
       font-size: 2rem;
       font-weight: 700;
+      @include c.mq() {
+        font-size: 1.6rem;
+      }
     }
     h4,
     p {
@@ -792,14 +1211,27 @@
 // お問い合わせ
 .p-contact {
   margin-bottom: 25rem;
+  @include c.mq() {
+    margin-bottom: 10rem;
+  }
   .inner {
     padding-top: 9rem;
+    @include c.mq() {
+      padding-top: 6rem;
+    }
     > p {
       margin-bottom: 7rem;
       line-height: 2.2;
+      @include c.mq() {
+        margin-bottom: 4rem;
+        line-height: 1.7;
+      }
     }
     > div {
       display: flex;
+      @include c.mq() {
+        flex-direction: column-reverse;
+      }
     }
   }
   .content {
@@ -808,6 +1240,9 @@
       table-layout: fixed;
       width: 100%;
       margin-bottom: 7rem;
+      @include c.mq() {
+        margin-bottom: 4rem;
+      }
       tr {
         &:not(:last-of-type) {
           td {
@@ -847,6 +1282,7 @@
         }
       }
       .btn {
+        display: block;
         border-radius: 5px;
         border: 2px solid #2e509f;
         padding-left: 0;
@@ -859,6 +1295,9 @@
         top: 50%;
         transform: translateY(-50%);
         right: 3rem;
+        @include c.mq() {
+          width: 1.2rem;
+        }
         path {
           fill: v.$color-blue;
           transition: all 0.3s;
@@ -871,15 +1310,26 @@
     padding-left: v.pxtovw(100);
     padding-top: 3rem;
     flex-shrink: 0;
+    @include c.mq() {
+      width: 100%;
+      padding: 0;
+    }
     .sidebar {
       position: sticky;
       top: 3rem;
+      @include c.mq() {
+        display: flex;
+        gap: 6rem;
+      }
     }
     .step {
       @include c.flex(center, center);
       gap: 3rem;
       color: v.$color-blue;
       margin-bottom: 5rem;
+      @include c.mq() {
+        gap: 1rem;
+      }
       &:last-of-type {
         span {
           &::before {
@@ -901,6 +1351,9 @@
       border-radius: 5px;
       width: 3.4rem;
       aspect-ratio: 1/1;
+      @include c.mq() {
+        width: 2.7rem;
+      }
       &::before {
         content: "";
         width: 1px;
@@ -910,6 +1363,14 @@
         bottom: -4rem;
         left: 50%;
         transform: translateX(-50%);
+        @include c.mq() {
+          width: 2rem;
+          height: 1px;
+          bottom: auto;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 9rem;
+        }
       }
     }
   }

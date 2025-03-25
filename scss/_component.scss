@@ -43,6 +43,20 @@ component
     color: #fff;
   }
 }
+.btn-grade {
+  background: linear-gradient(
+    90deg,
+    rgba(240, 247, 253, 1) 0%,
+    rgba(248, 249, 239, 1) 55%,
+    rgba(255, 251, 227, 1) 100%
+  );
+  color: v.$color-blue;
+  border: 2px solid v.$color-blue;
+  &:hover {
+    background: v.$color-blue;
+    color: #fff;
+  }
+}
 
 // ボタン
 .btn-wrap {
@@ -85,15 +99,24 @@ component
 // パンクズリスト
 .breadcrumbs {
   margin-bottom: 5rem;
+  @include c.mq() {
+    margin-bottom: 4rem;
+  }
   nav {
     ul {
       display: flex;
       align-items: center;
       gap: 6.5rem;
+      @include c.mq() {
+        gap: 4rem;
+      }
       li,
       a {
         font-size: 1.6rem;
         font-weight: 400;
+        @include c.mq() {
+          font-size: 1.3rem;
+        }
       }
       li {
         &:not(:last-child) {
@@ -104,6 +127,17 @@ component
             top: 50%;
             transform: translateY(-50%);
             right: -4rem;
+            @include c.mq() {
+              right: -3rem;
+            }
+          }
+        }
+        &:last-child {
+          @include c.mq() {
+            max-width: 12rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
@@ -132,7 +166,7 @@ component
     }
   }
   .content {
-    padding: 6.2rem 0 6.5rem 11rem;
+    padding: 6.2rem 0 6.5rem clamp(7rem, v.pxtovw(110), 11rem);
     @include c.mq() {
       padding: 6rem v.pxtovw_sp(15);
     }
@@ -167,7 +201,7 @@ component
       margin: 0 auto;
     }
   }
-  &.p-company {
+  &.company {
     &::before {
       position: absolute;
       top: v.pxtovw(-150);

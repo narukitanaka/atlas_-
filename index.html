@@ -32,6 +32,9 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Open+Sans:wght@700&display=swap"
     rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <title>アトラス埋め込み式信号機 株式会社</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -92,7 +95,14 @@
         <nav>
           <ul>
             <li><a href="./">ホーム</a></li>
-            <li><a href="./">取扱製品</a></li>
+            <li class="parent">
+              取扱製品
+              <div class="child">
+                <a href="product01.html">- 面発光床信号灯</a>
+                <a href="product02.html">- 横断歩道安全誘導灯</a>
+                <a href="product03.html">- 横断歩道照明ボラード</a>
+              </div>
+            </li>
             <li><a href="test-info.html">試験情報</a></li>
             <li><a href="company.html">会社概要</a></li>
             <li><a href="archive.html">お知らせ</a></li>
@@ -115,11 +125,10 @@
 
   <main>
 
+    <!-- キービジュアル -->
     <div class="kv">
-
       <div class="top-kvSwiper swiper">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide">
             <div class="img-box swiper-img"><img src="images/Fv-img01.jpg" alt=""></div>
           </div>
@@ -129,10 +138,8 @@
           <div class="swiper-slide">
             <div class="img-box swiper-img"><img src="images/Fv-img03.jpg" alt=""></div>
           </div>
-
         </div>
       </div><!-- /.top-kvSwiper -->
-
       <h1>
         <span>埋込型信号機が未来を変える</span><br>
         地域の安全を守り、<br>
@@ -140,8 +147,10 @@
       </h1>
     </div>
 
+
+    <!-- ミッション -->
     <section id="mission">
-      <div class="inner">
+      <div class="inner fadeIn">
         <div class="ttl-wrap">
           <div class="en">OUR MISSION</div>
           <h2>社会の安全を守る、<br class="u-sp">新時代の信号機</h2>
@@ -184,8 +193,9 @@
       </div><!-- /.textSwiper01 -->
     </section>
 
+    <!-- 取扱製品 -->
     <section id="products">
-      <div class="inner">
+      <div class="inner fadeIn">
         <div class="ttl-wrap">
           <div class="en">products</div>
           <h2>取扱製品</h2>
@@ -231,9 +241,10 @@
     </section>
 
 
+    <!-- 試験内容 -->
     <section id="safety">
       <div class="img-box obj-fit"><img src="images/top_safety-img01.jpg" alt=""></div>
-      <div class="content">
+      <div class="content fadeIn">
         <div class="inner">
           <div class="ttl-wrap">
             <div class="en">SAFETY TEST</div>
@@ -257,8 +268,9 @@
     </section>
 
 
+    <!-- お知らせ -->
     <section id="news">
-      <div class="inner">
+      <div class="inner fadeIn">
         <div class="content">
           <div class="left">
             <div class="ttl-wrap">
@@ -320,7 +332,9 @@
       </div><!-- /.textSwiper02 -->
     </section>
 
-    <section id="cta">
+
+    <!-- CTA -->
+    <section id="cta" class="fadeIn">
       <div class="inner">
         <div class="content">
           <div class="ttl-wrap">

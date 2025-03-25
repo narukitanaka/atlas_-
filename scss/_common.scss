@@ -211,6 +211,7 @@ input[type="button"] {
 
 h2 {
   font-size: 3.6rem;
+  font-size: clamp(3.2rem, v.pxtovw(36), 3.6rem);
   font-weight: 700;
   line-height: 1;
   @include mq() {
