@@ -987,7 +987,7 @@
     margin-top: 3rem;
   }
   &.p-archive {
-    margin-bottom: 26rem;
+    margin-bottom: 22rem;
     @include c.mq() {
       margin-bottom: 10rem;
     }
@@ -1093,6 +1093,32 @@
       }
     }
   }
+  .nav-links {
+    ul {
+      @include c.flex(center, center);
+      margin-top: 8rem;
+      gap: 2rem;
+      li {
+        width: 3.4rem;
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid v.$color-blue;
+        span,
+        a {
+          font-weight: 700;
+          color: v.$color-blue;
+          width: 100%;
+          height: 100%;
+          @include c.flex(center, center);
+        }
+        .current {
+          background-color: #f0f7fd;
+        }
+      }
+    }
+  }
+  //投稿詳細
   .contets {
     margin-top: 13rem;
     margin-bottom: 20rem;
@@ -1183,13 +1209,42 @@
     }
     img {
       max-width: 100%;
+      height: auto;
       margin-bottom: 2rem;
     }
     p {
+      line-height: 2;
+      @include c.mq() {
+        line-height: 1.7;
+      }
       a {
         color: v.$color-blue;
         text-decoration: underline;
       }
+    }
+    ul {
+      margin-bottom: 2rem;
+      li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 1.1rem;
+          left: 0;
+          background-color: v.$color-blue;
+          width: 5px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+        }
+      }
+    }
+    .wp-block-buttons {
+      margin-bottom: 2rem;
     }
   }
   .btn_next-prev {
@@ -1303,6 +1358,41 @@
           transition: all 0.3s;
         }
       }
+      .wpcf7-spinner {
+        display: none;
+      }
+      &:has(.prev) {
+        margin-top: 4rem;
+        @include c.mq() {
+          margin-top: 2rem;
+        }
+        &:hover {
+          svg {
+            path {
+              fill: v.$color-blue;
+            }
+          }
+        }
+        .prev {
+          display: block !important;
+        }
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+    &.confirm {
+      table {
+        th,
+        td {
+          display: table-cell;
+        }
+        th {
+          width: 40%;
+        }
+      }
     }
   }
   aside {
@@ -1370,6 +1460,27 @@
           top: 50%;
           transform: translateY(-50%);
           left: 9rem;
+        }
+      }
+    }
+  }
+  &.thanks {
+    .content {
+      p {
+        line-height: 2.2;
+        margin-bottom: 3rem;
+        @include c.mq() {
+          line-height: 1.7;
+          margin-bottom: 2rem;
+        }
+      }
+      .btn-wrap {
+        margin-top: 8rem;
+        @include c.mq() {
+          margin-top: 4rem;
+        }
+        .btn {
+          @include c.flex(center, center);
         }
       }
     }
